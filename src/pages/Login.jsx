@@ -3,7 +3,9 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, LogIn } from 'lucide-react'
 
-const API = 'http://localhost:3000/users'
+import config from '../config';
+
+const API = config.API_BASE_URL + '/users'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -29,7 +31,7 @@ const Login = () => {
       }
     } catch (err) {
       console.error('Login error', err)
-      alert('Could not reach login API (http://localhost:3000). Is the server running?')
+      alert(`Could not reach login API (${config.API_BASE_URL}). Is the server running?`)
     } finally {
       setLoading(false)
     }

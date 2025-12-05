@@ -3,7 +3,9 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Eye, EyeOff, UserPlus } from 'lucide-react'
 
-const API = 'http://localhost:3000/users'
+import config from '../config';
+
+const API = config.API_BASE_URL + '/users'
 
 const Signin = () => {
   const navigate = useNavigate()
@@ -38,7 +40,7 @@ const Signin = () => {
       navigate('/home', { replace: true })
     } catch (error) {
       console.error('Signup error:', error)
-      alert('Error signing up. Is the server running at http://localhost:3000 ?')
+      alert(`Error signing up. Is the server running at ${config.API_BASE_URL} ?`)
     } finally {
       setLoading(false)
     }

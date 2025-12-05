@@ -2,9 +2,11 @@ import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Bookmark, ExternalLink, Loader } from 'lucide-react';
 
+import config from '../config';
+
 const NEWSDATA_BASE = 'https://newsdata.io/api/1/latest';
-const NEWSDATA_APIKEY = "pub_5c4bf65702234c70806df21e1af102bd";
-const USERS_API = 'http://localhost:3000/users';
+const NEWSDATA_APIKEY = config.NEWSDATA_APIKEY;
+const USERS_API = config.API_BASE_URL + '/users';
 
 const News = () => {
     const [articles, setArticles] = useState([]);

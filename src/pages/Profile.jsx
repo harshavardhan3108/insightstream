@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { User, Lock, Save, Check, BookmarkCheck, Clock, TrendingUp, Mail, Calendar, Shield, Edit2, X } from 'lucide-react';
 
-const USERS_API = 'http://localhost:3000/users';
+import config from '../config';
+
+const USERS_API = config.API_BASE_URL + '/users';
 
 const Profile = () => {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));

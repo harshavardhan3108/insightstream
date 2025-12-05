@@ -3,11 +3,12 @@ import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Bookmark, ExternalLink, Clock, TrendingUp, Grid, List as ListIcon, Search } from 'lucide-react';
+import config from '../config';
 
-const USERS_API = 'http://localhost:3000/users';
+const USERS_API = config.API_BASE_URL + '/users';
 
 const NEWSDATA_BASE = 'https://newsdata.io/api/1/latest';
-const NEWSDATA_APIKEY = "pub_5c4bf65702234c70806df21e1af102bd";
+const NEWSDATA_APIKEY = config.NEWSDATA_APIKEY;
 const NEWS_COUNTRY = 'ind';
 
 const categories = [
@@ -212,8 +213,8 @@ const Home = () => {
             key={c.key}
             onClick={() => setSelectedCategory(c.key)}
             className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === c.key
-                ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
-                : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'
+              ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25'
+              : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'
               }`}
           >
             {c.label}

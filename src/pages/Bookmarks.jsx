@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Bookmark, Trash2, ExternalLink } from 'lucide-react';
 
-const USERS_API = 'http://localhost:3000/users';
+import config from '../config';
+
+const USERS_API = config.API_BASE_URL + '/users';
 
 const Bookmarks = () => {
     const [bookmarks, setBookmarks] = useState([]);
