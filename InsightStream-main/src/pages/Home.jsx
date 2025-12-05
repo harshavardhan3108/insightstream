@@ -5,9 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const USERS_API = 'http://localhost:3000/users';
 
-// NewsData.io config
-// Recommended: place your key in an .env file as REACT_APP_NEWSDATA_KEY and restart dev server.
-// If you keep it here, replace the string below.
+
 const NEWSDATA_BASE = 'https://newsdata.io/api/1/latest';
 const NEWSDATA_APIKEY = "pub_1718a49750a8499cbd2e03296ff82c2e";
 const NEWS_COUNTRY = 'ind'; // change if desired
